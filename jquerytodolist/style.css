@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+.to-do-list-sheet {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 10%;
+    background-image: url(looseleaf.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+h1 {
+    font-family: 'Annie Use Your Telescope', cursive;
+    font-size: 20px;
+}
+
+.list-header {
+    padding-left: 50px;
+    text-decoration: underline;
+}   
+
+.to-do-menu {
+    display: flex;
+    margin-left: 12%;
+}
+
+.todos {
+    margin-left: 22px;
+    font-family: 'Annie Use Your Telescope', cursive;
+    font-weight: bolder;
+    font-size: 15px;
+  }
+
+.line-strike {
+    text-decoration: line-through;
+}
+
+li:hover {
+    cursor: pointer;
+  }
+
