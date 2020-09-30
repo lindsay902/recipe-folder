@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!-<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Recipe Folder</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="./jquery.js"></script>
+    </head>
+    <body>
+        <h1 class="app-title">Recipes</h1>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="folder">
+            <ul class="tabs group">
+                <li>
+                    <a class="tabOne switch activeTab" href="#">Brunch</a>
+                </li>
+                <li>
+                    <a class="tabTwo switch" href="#">Appetizers</a>
+                </li>
+                <li>
+                    <a class="tabThree switch" href="#">Mains</a>
+                </li>
+                <li>
+                    <a class="tabFour switch" href="#">Desserts</a>
+                </li>
+                <li>
+                    <a class="tabFive switch" href="#">Drinks</a>
+                </li>
+            </ul>
+            <div class="content">
+                <p id="tabOne">
+                    <button class="add-content">+ Add a new recipe</button>
+                    <ul id="recipe-name">
+                    </ul>
+                </p>
+                <p id="tabTwo">
+                    <button class="add-content">+ Add a new recipe</button>
+                    <ul id="recipe-name">
+                    </ul>
+                </p>
+                <p id="tabThree">
+                    <button class="add-content">+ Add a new recipe</button>
+                    <ul id="recipe-name">
+                    </ul>
+                </p>
+                <p id="tabFour">
+                    <button class="add-content">+ Add a new recipe</button>
+                    <ul id="recipe-name">
+                    </ul>
+                </p>
+                <p id="tabFive">
+                    <button class="add-content">+ Add a new recipe</button>
+                </p>
+            </div>
+        </div>
+        <div class="paper">
+            <button class="save-button">Save</button>
+            <button class="close-button">X</button>
+            <div class="lines">
+                <div class="text" contenteditable spellcheck="false">
+                    <span class="recipe-name">Title Goes Here</span>
+                    <br/><br/>
+                    Cupcake ipsum dolor sit amet liquorice fruitcake. Candy canes jelly beans 
+                    sweet roll cupcake lollipop. Powder carrot cake toffee brownie. Marshmallow 
+                    sweet roll donut. Chocolate cake apple pie candy canes tiramisu dragée wafer. 
+                    Croissant cookie lemon drops tiramisu jelly-o donut. Sweet gummi bears ice cream.
+                </div>
+            </div>
+            <div class="holes hole-top"></div>
+            <div class="holes hole-middle"></div>
+            <div class="holes hole-bottom"></div>
+          </div>
+        
+        <script src="./script.js" async defer></script>
+    </body>
+</html>
