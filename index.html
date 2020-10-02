@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="./jquery.js"></script>
+        <script src="./firstscript.js"></script>
     </head>
     <body>
         <h1 class="app-title">Recipes</h1>
@@ -38,31 +38,36 @@
                 </li>
             </ul>
             <div class="content">
-                <p id="tabOne">
-                    <button class="add-content">+ Add a new recipe</button>
-                    <ul id="recipe-name">
-                    </ul>
+                <!--<button class="add-content">+ Add a new recipe</button>-->
+                <p id="tabOne">Brunch Recipes
+                    <button class="add-brunch-content">+ Add a new recipe</button>
+                        <ul class="tabOne">
+                            <li class="tabOne"><a class="tabOne" href="#">Pancakes</a></li>
+                        </ul>
                 </p>
-                <p id="tabTwo">
-                    <button class="add-content">+ Add a new recipe</button>
-                    <ul id="recipe-name">
-                    </ul>
+                <p id="tabTwo">Appetizer Recipes
+                    <button class="add-appetizer-content">+ Add a new recipe</button>
+                   <!-- <ul id="recipe-name">
+                    </ul>-->
                 </p>
-                <p id="tabThree">
-                    <button class="add-content">+ Add a new recipe</button>
-                    <ul id="recipe-name">
-                    </ul>
+                <p id="tabThree">Main Course Recipes
+                    <button class="add-main-content">+ Add a new recipe</button>
+                    <!--<ul id="recipe-name">
+                    </ul>-->
                 </p>
-                <p id="tabFour">
-                    <button class="add-content">+ Add a new recipe</button>
-                    <ul id="recipe-name">
-                    </ul>
+                <p id="tabFour">Dessert Recipes
+                    <button class="add-dessert-content">+ Add a new recipe</button>
+                    <!--<ul id="recipe-name">
+                    </ul>-->
                 </p>
-                <p id="tabFive">
-                    <button class="add-content">+ Add a new recipe</button>
+                <p id="tabFive">Drink Recipes
+                    <button class="add-drink-content">+ Add a new recipe</button>
+                    <!--<ul id="recipe-name">
+                    </ul>-->
                 </p>
             </div>
         </div>
+
         <div class="paper">
             <button class="save-button">Save</button>
             <button class="close-button">X</button>
@@ -79,8 +84,9 @@
             <div class="holes hole-top"></div>
             <div class="holes hole-middle"></div>
             <div class="holes hole-bottom"></div>
-          </div>
+        </div>
         
+        <script src="./jquery.js"></script>
         <script src="./script.js" async defer></script>
     </body>
 </html>

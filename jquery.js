@@ -1,70 +1,69 @@
 $(document).ready(() => {
 
-    $('.paper').hide();
+    const brunchTab = $('.tabOne');
 
-    $("#tabTwo").hide();
-    $("#tabThree").hide();
-    $("#tabFour").hide();
-    $("#tabFive").hide();
-
-
+    //const activeTab = (tab) => {
+    //    tab.on('click'), 
+   // }
     $('.tabOne').on('click', function() {
-    $('a.switch').removeClass("activeTab");
-    $(this).addClass("activeTab");
-      $("#tabOne").show();
-      $("#tabTwo").hide();
-      $("#tabThree").hide();
-      $("#tabFour").hide();
-      $("#tabFive").hide();
-      event.preventDefault();
+        $('a.switch').removeClass("activeTab");
+            $(this).addClass("activeTab");
+            $("#tabOne").show();
+            $("#tabTwo").hide();
+            $("#tabThree").hide();
+            $("#tabFour").hide();
+            $("#tabFive").hide();
+            event.preventDefault();
 	});
   
     $('.tabTwo').on('click', function() {
         $('a.switch').removeClass("activeTab");
-        $(this).addClass("activeTab");
-        $("#tabOne").hide();
-        $("#tabTwo").show()
-        $("#tabThree").hide();
-        $("#tabFour").hide();
-        $("#tabFive").hide();
-        event.preventDefault();
-        });
+            $(this).addClass("activeTab");
+            $("#tabOne").hide();
+            $("#tabTwo").show()
+            $("#tabThree").hide();
+            $("#tabFour").hide();
+            $("#tabFive").hide();
+            event.preventDefault();
+    });
     
     $('.tabThree').on('click', function() {
         $('a.switch').removeClass("activeTab");
-        $(this).addClass("activeTab");
-        $("#tabOne").hide();
-        $("#tabTwo").hide();
-        $("#tabThree").show();
-        $("#tabFour").hide();
-        $("#tabFive").hide();
-        event.preventDefault();
-        });
+            $(this).addClass("activeTab");
+            $("#tabOne").hide();
+            $("#tabTwo").hide();
+            $("#tabThree").show();
+            $("#tabFour").hide();
+            $("#tabFive").hide();
+            event.preventDefault();
+    });
     
     $('.tabFour').on('click', function() {
         $('a.switch').removeClass("activeTab");
-        $(this).addClass("activeTab");
-        $("#tabOne").hide();
-        $("#tabTwo").hide();
-        $("#tabThree").hide();
-        $("#tabFour").show();
-        $("#tabFive").hide();
-        event.preventDefault();
-        });
+            $(this).addClass("activeTab");
+            $("#tabOne").hide();
+            $("#tabTwo").hide();
+            $("#tabThree").hide();
+            $("#tabFour").show();
+            $("#tabFive").hide();
+            event.preventDefault();
+    });
 
     $('.tabFive').on('click', function() {
         $('a.switch').removeClass("activeTab");
-        $(this).addClass("activeTab");
-        $("#tabOne").hide();
-        $("#tabTwo").hide();
-        $("#tabThree").hide();
-        $("#tabFour").hide();
-        $("#tabFive").show();
-        event.preventDefault();
-        });
+            $(this).addClass("activeTab");
+            $("#tabOne").hide();
+            $("#tabTwo").hide();
+            $("#tabThree").hide();
+            $("#tabFour").hide();
+            $("#tabFive").show();
+            event.preventDefault();
+    });
+          
     
-    $('.add-content').on('click', () => {
+    $('.add-brunch-content').on('click', () => {
         $('.paper').show();
+
     })
 
     $('.close-button').on('click', () => {
