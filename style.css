@@ -122,8 +122,8 @@ ul.tabs li a.activeTab {
 }
 
 .paper {
-  z-index: 2;
   position: absolute;
+  z-index: 6;
   height: 550px;
   width: 450px;
   background: rgba(255,255,255,0.9);
@@ -147,16 +147,48 @@ ul.tabs li a.activeTab {
   width: 100%;
   background-image: repeating-linear-gradient(white 0px, white 24px, steelblue 25px);
 }
+
+#recipe-name-input {
+  
+  font-family: 'Indie Flower', serif;
+}
+
+input {
+  font-family: 'Indie Flower', serif;
+  outline: none;
+}
+
+table {
+  margin-left: 50px;
+}
+
+tr {
+  margin-bottom: 30%;
+}
+
+input::placeholder {
+  padding-bottom: 300px;
+}
+
+#recipe-name-area {
+  justify-self: center;
+}
+
 .text {
   position: absolute;
   top: 65px;
   left: 55px;
   bottom: 10px;
   right: 10px;
-  line-height: 25px;
-  font-family: 'Indie Flower';
+  line-height: 20px;
+  font-family: 'Indie Flower', serif;
   overflow: hidden;
   outline: none;
+}
+
+#instructions {
+  margin-top: 7px;
+  width: auto;
 }
 
 .holes {
@@ -180,10 +212,10 @@ ul.tabs li a.activeTab {
   bottom: 10%;
 }
 
-.save-button {
+#submit-button {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
 }
 
 .close-button {
@@ -195,6 +227,6 @@ ul.tabs li a.activeTab {
 p {
   padding-left: 2%;
   padding-top: 2%;
-  font-family: 'Indie Flower', sans-serif;
+  font-family: 'Indie Flower', serif;
 }
 

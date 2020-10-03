@@ -1,5 +1,7 @@
 $(document).ready(() => {
 
+    //import {recipeAdd} from './script';
+
     const brunchTab = $('.tabOne');
 
     //const activeTab = (tab) => {
@@ -70,12 +72,12 @@ $(document).ready(() => {
         $('.paper').hide();
     })
     
-    let recipeName = $('.recipe-name').val();
+    let recipeName = localStorage.getItem('recipename');
 
     //select the active class?
-    $('.save-button').on('click', () => {
+   /* $('.submit-button').on('click', () => {
         $('<li>'+recipeName+'</li>').appendTo('#recipe-name');        
-    })
+    }) */
 
     
 
