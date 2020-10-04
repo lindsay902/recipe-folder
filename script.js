@@ -18,18 +18,44 @@ const recipeAdd = document.getElementById("recipe-form").addEventListener('submi
     e.preventDefault();
 
    
-    let formData = {
+   /* let formData = {
         "recipename" : this.recipename.value,
         "instructions" : this.instructions.value
     };
 
     // To store data in local storage
-   
-    
-    localStorage.setItem('formData', JSON.stringify(formData));
+       
+    localStorage.setItem('formData', JSON.stringify(formData));  */
 
+    let existingEntries = JSON.parse(localStorage.getItem("allEntries")) || [];
+    //if(existingEntries === undefined) existingEntries = [];
     
+    let formData = {
+        "recipename" : this.recipename.value,
+        "instructions" : this.instructions.value
+        };
+    
+    localStorage.setItem("formData", JSON.stringify(formData));
+    // Save allEntries back to local storage
+    existingEntries.push(formData);
+    localStorage.setItem("allEntries", JSON.stringify(existingEntries));
 
+/*
+    document.getElementById('submit-button').onclick = function addElement () { 
+  // create a new div element 
+        const newDiv = document.createElement("li"); 
+  
+  // and give it some content 
+        const newContent = document.createTextNode(this.recipename.value); 
+  
+  // add the text node to the newly created div
+        newDiv.appendChild(newContent);  
+
+  // add the newly created element and its content into the DOM 
+        const currentDiv = document.getElementById('recipe-list'); 
+        document.body.insertAfter(newDiv, currentDiv); 
+    }
+*/
 });
 
 

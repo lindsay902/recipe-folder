@@ -1,7 +1,5 @@
 $(document).ready(() => {
 
-    //import {recipeAdd} from './script';
-
     const brunchTab = $('.tabOne');
 
     //const activeTab = (tab) => {
@@ -75,9 +73,9 @@ $(document).ready(() => {
     let recipeName = localStorage.getItem('recipename');
 
     //select the active class?
-   /* $('.submit-button').on('click', () => {
+    $('.submit-button').on('click', () => {
         $('<li>'+recipeName+'</li>').appendTo('#recipe-name');        
-    }) */
+    })
 
     
 
