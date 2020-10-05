@@ -41,27 +41,27 @@
                 <!--<button class="add-content">+ Add a new recipe</button>-->
                 <p id="tabOne">Brunch Recipes
                     <button class="add-brunch-content">+ Add a new recipe</button>
-                        <ul id="recipe-list"></ul>
+                        <ul id="brunch-list"></ul>
                 </p>
                 <p id="tabTwo">Appetizer Recipes
                     <button class="add-appetizer-content">+ Add a new recipe</button>
-                   <!-- <ul id="recipe-name">
-                    </ul>-->
+                        <ul id="appetizer-list">
+                        </ul>
                 </p>
                 <p id="tabThree">Main Course Recipes
                     <button class="add-main-content">+ Add a new recipe</button>
-                    <!--<ul id="recipe-name">
-                    </ul>-->
+                        <ul id="main-list">
+                        </ul>
                 </p>
                 <p id="tabFour">Dessert Recipes
                     <button class="add-dessert-content">+ Add a new recipe</button>
-                    <!--<ul id="recipe-name">
-                    </ul>-->
+                        <ul id="dessert-list">
+                        </ul>
                 </p>
                 <p id="tabFive">Drink Recipes
                     <button class="add-drink-content">+ Add a new recipe</button>
-                    <!--<ul id="recipe-name">
-                    </ul>-->
+                        <ul id="drink-list">
+                        </ul>
                 </p>
             </div>
         </div>
@@ -89,12 +89,12 @@
             <button class="close-button">X</button>
             <div class="lines">
                 <form id="recipe-form">
-                    <input id="submit-button" type="submit" name="submit" value="Save">
+                    <input id="submit-button" type="submit" name="submit" value="Save" onclick="getRecipeName();">
                         <table>
                             <tbody>
                                 <tr id="recipe-name-area">
-                                    <td id="recipe-name-input" colspan="3"><label for="">Recipe Name:</label></td>
-                                    <td><input autocomplete="off" name="recipename" type="text"></td>
+                                    <td colspan="3"><label for="">Recipe Name:</label></td>
+                                    <td><input type="text" id="recipe-name-input" autocomplete="off" name="recipename"></td>
                                 </tr>
 
                                 <br>

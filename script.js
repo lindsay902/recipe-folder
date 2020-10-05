@@ -17,29 +17,34 @@ class Recipe {
 const recipeAdd = document.getElementById("recipe-form").addEventListener('submit', function (e) {
     e.preventDefault();
 
-   
-   /* let formData = {
-        "recipename" : this.recipename.value,
-        "instructions" : this.instructions.value
-    };
-
-    // To store data in local storage
-       
-    localStorage.setItem('formData', JSON.stringify(formData));  */
-
     let existingEntries = JSON.parse(localStorage.getItem("allEntries")) || [];
-    //if(existingEntries === undefined) existingEntries = [];
-    
-    let formData = {
-        "recipename" : this.recipename.value,
-        "instructions" : this.instructions.value
-        };
+      // let formData = new Recipe {}
+
+    let formData = new Recipe(this.recipename.value, this.instructions.value)
     
     localStorage.setItem("formData", JSON.stringify(formData));
     // Save allEntries back to local storage
     existingEntries.push(formData);
     localStorage.setItem("allEntries", JSON.stringify(existingEntries));
 
+});
+
+const getRecipeName = () => {
+    let input = document.getElementById("recipe-name-input").value;
+    let ul = document.getElementById("brunch-list");
+    let li = document.createElement("li");
+    li.appendChild(document.createTextNode(input));
+    li.setAttribute("id", input); // added line
+    ul.appendChild(li);
+}
+
+const saveRecipesToLocalStorage = () => {
+    
+}
+
+const openRecipe = () => {
+    
+}
 /*
     document.getElementById('submit-button').onclick = function addElement () { 
   // create a new div element 
@@ -56,7 +61,7 @@ const recipeAdd = document.getElementById("recipe-form").addEventListener('submi
         document.body.insertAfter(newDiv, currentDiv); 
     }
 */
-});
+
 
 
 //export {recipeAdd};

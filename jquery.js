@@ -63,19 +63,35 @@ $(document).ready(() => {
     
     $('.add-brunch-content').on('click', () => {
         $('.paper').show();
+        $('#recipe-name-input').val('');
+        $('#instructions').val('');
 
     })
 
     $('.close-button').on('click', () => {
         $('.paper').hide();
     })
-    
-    let recipeName = localStorage.getItem('recipename');
 
-    //select the active class?
-    $('.submit-button').on('click', () => {
-        $('<li>'+recipeName+'</li>').appendTo('#recipe-name');        
+    $('#submit-button').on('click', () => {
+        $('.paper').hide();
     })
+
+    $('#scrambled-eggs').on('click', () => {
+        $('.paper').show();
+    })
+
+    //on li hover, change mouse
+
+
+
+    
+    // let item = $('#recipe-name-input').value; //localStorage.getItem('recipename');
+
+    // //select the active class?
+    // $('#submit-button').on('click', () => {
+    //     $('<li>'+item+'</li>').appendTo('#brunch-list');
+    //     $('.paper').hide();        
+    // })
 
     
 
