@@ -29,16 +29,18 @@ const recipeAdd = document.getElementById("recipe-form").addEventListener('submi
 
 });
 
-const getRecipeName = () => {
+const saveRecipeToLocalStorage = () => {
     let input = document.getElementById("recipe-name-input").value;
     let ul = document.getElementById("brunch-list");
     let li = document.createElement("li");
     li.appendChild(document.createTextNode(input));
     li.setAttribute("id", input); // added line
     ul.appendChild(li);
-}
-
-const saveRecipesToLocalStorage = () => {
+    let newRecipeItemLi = document.getElementById(input);
+    localStorage.setItem("listItems", newRecipeItemLi.outerHTML);
+    if (!localStorage.getItem("listItems")) {
+        $window.localStorage.setItem("listItems", JSON.stringify($scope.listItems));
+    }
     
 }
 
