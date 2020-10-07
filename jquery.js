@@ -14,7 +14,7 @@ $(document).ready(() => {
             $("#tabFour").hide();
             $("#tabFive").hide();
             event.preventDefault();
-	});
+    });
   
     $('.tabTwo').on('click', function() {
         $('a.switch').removeClass("activeTab");
@@ -75,12 +75,7 @@ $(document).ready(() => {
     $('#submit-button').on('click', () => {
         $('.paper').hide();
     })
-
-    $('#scrambled-eggs').on('click', () => {
-        $('.paper').show();
-    })
-
-    //on li hover, change mouse
+  
 
 
 

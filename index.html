@@ -39,26 +39,26 @@
             </ul>
             <div class="content">
                 <!--<button class="add-content">+ Add a new recipe</button>-->
-                <p id="tabOne">Brunch Recipes
+                <p id="tabOne" class="tabOne switch activeTab">Brunch Recipes
                     <button class="add-brunch-content">+ Add a new recipe</button>
                         <ul id="brunch-list"></ul>
                 </p>
-                <p id="tabTwo">Appetizer Recipes
+                <p id="tabTwo" class="tabTwo switch">Appetizer Recipes
                     <button class="add-appetizer-content">+ Add a new recipe</button>
                         <ul id="appetizer-list">
                         </ul>
                 </p>
-                <p id="tabThree">Main Course Recipes
+                <p id="tabThree" class="tabThree switch">Main Course Recipes
                     <button class="add-main-content">+ Add a new recipe</button>
                         <ul id="main-list">
                         </ul>
                 </p>
-                <p id="tabFour">Dessert Recipes
+                <p id="tabFour" class="tabFour switch">Dessert Recipes
                     <button class="add-dessert-content">+ Add a new recipe</button>
                         <ul id="dessert-list">
                         </ul>
                 </p>
-                <p id="tabFive">Drink Recipes
+                <p id="tabFive" class="tabFive switch">Drink Recipes
                     <button class="add-drink-content">+ Add a new recipe</button>
                         <ul id="drink-list">
                         </ul>
@@ -89,7 +89,7 @@
             <button class="close-button">X</button>
             <div class="lines">
                 <form id="recipe-form">
-                    <input id="submit-button" type="submit" name="submit" value="Save" onclick="getRecipeName();">
+                    <input id="submit-button" type="submit" name="submit" value="Save" onclick="saveRecipeToLocalStorage();">
                         <table>
                             <tbody>
                                 <tr id="recipe-name-area">

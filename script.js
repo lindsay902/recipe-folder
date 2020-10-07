@@ -29,67 +29,46 @@ const recipeAdd = document.getElementById("recipe-form").addEventListener('submi
 
 });
 
+//write a function that loops throught the different tabs to get relevant <li> from local storage.
+
 const saveRecipeToLocalStorage = () => {
     let input = document.getElementById("recipe-name-input").value;
     let ul = document.getElementById("brunch-list");
     let li = document.createElement("li");
     li.appendChild(document.createTextNode(input));
     li.setAttribute("id", input); // added line
+    li.setAttribute("class", "brunch-list-item")
     ul.appendChild(li);
+    //keep all li items in local storage
+    let existingListItems = JSON.parse(localStorage.getItem("allListItems")) || [];
     let newRecipeItemLi = document.getElementById(input);
     localStorage.setItem("listItems", newRecipeItemLi.outerHTML);
-    if (!localStorage.getItem("listItems")) {
-        $window.localStorage.setItem("listItems", JSON.stringify($scope.listItems));
-    }
-    
+    existingListItems.push(newRecipeItemLi.outerHTML);
+    localStorage.setItem("allListItems", JSON.stringify(existingListItems));    
 }
+
+//write code to ensure list elements stay on refresh
+
+//on list item click, open the paper
+
+//fill the paper with the proper recipe info:
+//target the current list element by name
+//loop through existing entries
+// if target === existingEntries[i]
+//get recipe name from local storage
+//get instructions from local storage
+//push recipename to recipenameinput.val
+//push instructions to instructions.val
 
 const openRecipe = () => {
     
 }
-/*
-    document.getElementById('submit-button').onclick = function addElement () { 
-  // create a new div element 
-        const newDiv = document.createElement("li"); 
-  
-  // and give it some content 
-        const newContent = document.createTextNode(this.recipename.value); 
-  
-  // add the text node to the newly created div
-        newDiv.appendChild(newContent);  
 
-  // add the newly created element and its content into the DOM 
-        const currentDiv = document.getElementById('recipe-list'); 
-        document.body.insertAfter(newDiv, currentDiv); 
-    }
-*/
+
 
 
 
 //export {recipeAdd};
 
 
-/*const brunchItem = document.createElement('li');
 
-brunchItem.id = 'brunch-recipe';
-
-brunchItem.innerHTML = 'pancakes';
-
-document.getElementById('recipe-name').appendChild(brunchItem);
-*/
-
-
-//let element = document.getElementById('interact');
-//element.onclick = function() { element.style.backgroundColor = 'blue' };
-
-/*let element = document.querySelector("button");
-
-function turnButtonRed (){
-	element.style.backgroundColor = "red";
-  element.style.color = "white";
-  element.innerHTML = "Red Button"; 
-}
-
-element.onclick = turnButtonRed; */
-
-//ON SAVE CLICK CALL FUNCTION

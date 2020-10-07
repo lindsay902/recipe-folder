@@ -172,6 +172,8 @@ input::placeholder {
 
 #recipe-name-area {
   justify-self: center;
+  font-family: 'Indie Flower', serif;
+  margin-bottom: 25px;
 }
 
 .text {
