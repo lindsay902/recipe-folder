@@ -39,15 +39,28 @@ const saveRecipeToLocalStorage = () => {
     li.setAttribute("id", input); // added line
     li.setAttribute("class", "brunch-list-item")
     ul.appendChild(li);
-    //keep all li items in local storage
+    //keep all li items in local storage - option1
     let existingListItems = JSON.parse(localStorage.getItem("allListItems")) || [];
-    let newRecipeItemLi = document.getElementById(input);
-    localStorage.setItem("listItems", newRecipeItemLi.outerHTML);
-    existingListItems.push(newRecipeItemLi.outerHTML);
-    localStorage.setItem("allListItems", JSON.stringify(existingListItems));    
+    let newRecipeItemLi = input;
+    localStorage.setItem("listItems", newRecipeItemLi);
+    existingListItems.push(newRecipeItemLi);
+    localStorage.setItem("allListItems", JSON.stringify(existingListItems));  
 }
 
 //write code to ensure list elements stay on refresh
+
+const refreshListItems = (idee) => {
+    let items = JSON.parse(localStorage.getItem("allListItems")) || [];
+    let ul = document.getElementById(idee);
+    console.log(ul);
+
+    items.forEach(item => {
+        let li = document.createElement("li");
+        li.appendChild(document.createTextNode(item));
+        ul.appendChild(li);
+        console.log(ul.appendChild(li));
+    })
+}
 
 //on list item click, open the paper
 
