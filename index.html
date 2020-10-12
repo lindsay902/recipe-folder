@@ -40,14 +40,14 @@
             <div id="tab1" class="content active">
                 <!--<button class="add-content">+ Add a new recipe</button>-->
                 <p>Brunch Recipes
-                    <button id="RefreshPage" onclick='refreshListItems("brunch-list");'>Refresh Brunch Recipes</button>
+                    <button id="RefreshPage" onclick='refreshListItems("brunch-list", "allBrunchItems");'>Refresh Brunch Recipes</button>
                     <button class="add-brunch-content">+ Add a new recipe</button> 
                         <ul id="brunch-list"></ul>
                 </p>
             </div>
             <div id="tab2" class="content">
                 <p>Appetizer Recipes
-                    <button id="RefreshPage" onclick='refreshListItems("appetizer-list");'>Refresh Appetizer Recipes</button>
+                    <button id="RefreshPage" onclick='refreshListItems("appetizer-list", "allAppetizerItems");'>Refresh Appetizer Recipes</button>
                     <button class="add-appetizer-content">+ Add a new recipe</button>
                         <ul id="appetizer-list">
                         </ul>
@@ -79,30 +79,13 @@
             </div>
         </div>
 
-        <!--<div class="paper">
-            <button class="save-button">Save</button>
-            <button class="close-button">X</button>
-            <div class="lines">
-                <div class="text" contenteditable spellcheck="false">
-                    <span class="recipe-name">Title Goes Here</span>
-                    <br/><br/>
-                    Cupcake ipsum dolor sit amet liquorice fruitcake. Candy canes jelly beans 
-                    sweet roll cupcake lollipop. Powder carrot cake toffee brownie. Marshmallow 
-                    sweet roll donut. Chocolate cake apple pie candy canes tiramisu dragée wafer. 
-                    Croissant cookie lemon drops tiramisu jelly-o donut. Sweet gummi bears ice cream.
-                </div>
-            </div>
-            <div class="holes hole-top"></div>
-            <div class="holes hole-middle"></div>
-            <div class="holes hole-bottom"></div>
-        </div> -->
-
-        <div class="paper">
+        <div id="brunch-paper" class="paper">
             <!--<button class="save-button">Save</button>-->
             <button class="close-button">X</button>
             <div class="lines">
                 <form id="recipe-form">
-                    <input id="submit-button" type="submit" name="submit" value="Save" onclick="saveRecipeToLocalStorage();">
+                    <input id="submit-button" type="submit" name="submit" value="Save" onclick="saveRecipeToLocalStorage('brunch-list',
+                    'brunch-list-items', 'brunchListItems', 'allBrunchItems');">
                         <table>
                             <tbody>
                                 <tr id="recipe-name-area">
@@ -134,7 +117,44 @@
         <div class="holes hole-bottom"></div>
 
         </div>
-        
+        <div id="appetizer-paper" class="paper">
+            <!--<button class="save-button">Save</button>-->
+            <button class="close-button">X</button>
+            <div class="lines">
+                <form id="recipe-form">
+                    <input id="submit-button" type="submit" name="submit" value="Save" onclick="saveRecipeToLocalStorage('appetizer-list',
+                    'appetizer-list-items', 'appetizerListItems', 'allAppetizerItems');">
+                        <table>
+                            <tbody>
+                                <tr id="recipe-name-area">
+                                    <td colspan="3"><label for="">Recipe Name:</label></td>
+                                    <td><input type="text" id="recipe-name-input" autocomplete="off" name="recipename"></td>
+                                </tr>
+
+                                <br>
+                                <br>
+
+                                <tr>
+                                    <td><input id="instructions" colspan="4" autocomplete="off" name="instructions" type="text" placeholder="Cupcake ipsum dolor sit amet liquorice fruitcake. Candy canes jelly beans 
+                                        sweet roll cupcake lollipop. Powder carrot cake toffee brownie. Marshmallow 
+                                        sweet roll donut. Chocolate cake apple pie candy canes tiramisu dragée wafer. 
+                                        Croissant cookie lemon drops tiramisu jelly-o donut. Sweet gummi bears ice cream.">
+                                   <!-- <div id="instructions" class="text" contenteditable="true" spellcheck="false">Cupcake ipsum dolor sit amet liquorice fruitcake. Candy canes jelly beans 
+                                        sweet roll cupcake lollipop. Powder carrot cake toffee brownie. Marshmallow 
+                                        sweet roll donut. Chocolate cake apple pie candy canes tiramisu dragée wafer. 
+                                        Croissant cookie lemon drops tiramisu jelly-o donut. Sweet gummi bears ice cream.</div>-->
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </form>
+                <ul id="err-list"></ul>
+            </div>
+        <div class="holes hole-top"></div>
+        <div class="holes hole-middle"></div>
+        <div class="holes hole-bottom"></div>
+
+        </div>
         <script src="./jquery.js"></script>
         <script src="./script.js" async defer></script>
     </body>

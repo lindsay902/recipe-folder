@@ -13,10 +13,8 @@ class Recipe {
     }
 
 }
-
 const recipeAdd = document.getElementById("recipe-form").addEventListener('submit', function (e) {
     e.preventDefault();
-
     let existingEntries = JSON.parse(localStorage.getItem("allEntries")) || [];
       // let formData = new Recipe {}
 
@@ -31,27 +29,43 @@ const recipeAdd = document.getElementById("recipe-form").addEventListener('submi
 
 //write a function that loops throught the different tabs to get relevant <li> from local storage.
 
-const saveRecipeToLocalStorage = () => {
+const saveRecipeToLocalStorage = (ulList, item, listItems, allItems) => {
     let input = document.getElementById("recipe-name-input").value;
-    let ul = document.getElementById("brunch-list");
+    let ul = document.getElementById(ulList);
     let li = document.createElement("li");
     li.appendChild(document.createTextNode(input));
     li.setAttribute("id", input); // added line
-    li.setAttribute("class", "brunch-list-item")
+    li.setAttribute("class", item)
     ul.appendChild(li);
     //keep all li items in local storage - option1
-    let existingListItems = JSON.parse(localStorage.getItem("allListItems")) || [];
+    let existingListItems = JSON.parse(localStorage.getItem(allItems)) || [];
     let newRecipeItemLi = input;
-    localStorage.setItem("listItems", newRecipeItemLi);
+    localStorage.setItem(listItems, newRecipeItemLi);
     existingListItems.push(newRecipeItemLi);
-    localStorage.setItem("allListItems", JSON.stringify(existingListItems));  
+    localStorage.setItem(allItems, JSON.stringify(existingListItems));  
+}
+
+const saveAppetizerRecipeToLocalStorage = () => {
+    let input = document.getElementById("recipe-name-input").value;
+    let ul = document.getElementById("appetizer-list");
+    let li = document.createElement("li");
+    li.appendChild(document.createTextNode(input));
+    li.setAttribute("id", input); // added line
+    li.setAttribute("class", "appetizer-list-item")
+    ul.appendChild(li);
+    //keep all li items in local storage - option1
+    let existingListItems = JSON.parse(localStorage.getItem("allAppetizerItems")) || [];
+    let newRecipeItemLi = input;
+    localStorage.setItem("appetizerListItems", newRecipeItemLi);
+    existingListItems.push(newRecipeItemLi);
+    localStorage.setItem("allAppetizerItems", JSON.stringify(existingListItems));  
 }
 
 //write code to ensure list elements stay on refresh
 
-const refreshListItems = (idee) => {
-    let items = JSON.parse(localStorage.getItem("allListItems")) || [];
-    let ul = document.getElementById(idee);
+const refreshListItems = (id, allItems) => {
+    let items = JSON.parse(localStorage.getItem(allItems)) || [];
+    let ul = document.getElementById(id);
     console.log(ul);
 
     items.forEach(item => {
@@ -77,11 +91,4 @@ const openRecipe = () => {
     
 }
 
-
-
-
-
-//export {recipeAdd};
-
-
-
+;
