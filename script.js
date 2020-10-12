@@ -66,10 +66,10 @@ const saveAppetizerRecipeToLocalStorage = () => {
 const refreshListItems = (id, allItems) => {
     let items = JSON.parse(localStorage.getItem(allItems)) || [];
     let ul = document.getElementById(id);
-    console.log(ul);
 
-    items.forEach(item => {
+    items.forEach((item, index) => {
         let li = document.createElement("li");
+        li.id = index;
         li.appendChild(document.createTextNode(item));
         ul.appendChild(li);
         console.log(ul.appendChild(li));

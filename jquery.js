@@ -95,28 +95,23 @@ $(document).ready(() => {
     })
 
     $('#brunch-list').on('click', event => {
-      $(event.currentTarget).on('click', () => {
-        $('.paper').show();
-        let currentIndex = $('ul').index(this.currentTarget);
-        console.log(currentIndex);
-        
-        //change input of recipe name and instructions to reflect current item
-        let valInput = $('#brunch-list li').eq(currentIndex).text();
-        console.log(valInput);
-        $('#recipe-name-input').val(valInput);
-        let getItems = JSON.parse(localStorage.getItem("allEntries")) || [];
-        console.log(getItems);
-        let myArray = getItems;
-        let test = myArray.map(function(e) { return e._recipename;}).indexOf(valInput);
-        console.log(test);
-        let instructionsSet = getItems[test]._instructions;
-        console.log(instructionsSet);
-        $('#instructions').val(instructionsSet);
-    })
+
+      $('.paper').show();
+      let currentIndex = event.target.id;
+      
+      //change input of recipe name and instructions to reflect current item
+      let valInput = $('#brunch-list li').eq(currentIndex).text();
+
+      $('#recipe-name-input2').attr("value", valInput);
+
+      console.log($('#recipe-name-input2'))
+
+      let getItems = JSON.parse(localStorage.getItem("allEntries")) || [];
+      let myArray = getItems;
+      let test = myArray.map(function(e) { return e._recipename;}).indexOf(valInput);
+      let instructionsSet = getItems[test]._instructions;
+      $('#instructions').val(instructionsSet);
   })
-  
-
-
 
     
     // let item = $('#recipe-name-input').value; //localStorage.getItem('recipename');
