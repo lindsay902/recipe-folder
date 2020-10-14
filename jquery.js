@@ -1,127 +1,159 @@
 $(document).ready(() => {
 
-    $(function() {
-        $('a, a.switch').on('click', function() {
-          let active = $(this).attr('rel');
+  $(function() {
+      $('a, a.switch').on('click', function() {
+        let active = $(this).attr('rel');
+        
+        $('a.switch').removeClass('activeTab');
+        $(this).addClass('activeTab');
+    
+        
+        $('div.active').slideUp(200, function() {
+          $(this).removeClass('active');
           
-          $('a.switch').removeClass('activeTab');
-          $(this).addClass('activeTab');
-      
-          
-          $('div.active').slideUp(200, function() {
-            $(this).removeClass('active');
-            
-            $("#tab" + active).slideDown(200).addClass('active');
-          });
+          $("#tab" + active).slideDown(200).addClass('active');
         });
       });
+    });
 
-    // $('.tabOne').on('click', function() {
-    //     $('a.switch').removeClass("activeTab");
-    //         $(this).addClass("activeTab");
-    //         $("#tabOne").show();
-    //         $("#tabTwo").hide();
-    //         $("#tabThree").hide();
-    //         $("#tabFour").hide();
-    //         $("#tabFive").hide();
-    //         event.preventDefault();
-    // });
   
-    // $('.tabTwo').on('click', function() {
-    //     $('a.switch').removeClass("activeTab");
-    //         $(this).addClass("activeTab");
-    //         $("#tabOne").hide();
-    //         $("#tabTwo").show()
-    //         $("#tabThree").hide();
-    //         $("#tabFour").hide();
-    //         $("#tabFive").hide();
-    //         event.preventDefault();
-    // });
-    
-    // $('.tabThree').on('click', function() {
-    //     $('a.switch').removeClass("activeTab");
-    //         $(this).addClass("activeTab");
-    //         $("#tabOne").hide();
-    //         $("#tabTwo").hide();
-    //         $("#tabThree").show();
-    //         $("#tabFour").hide();
-    //         $("#tabFive").hide();
-    //         event.preventDefault();
-    // });
-    
-    // $('.tabFour').on('click', function() {
-    //     $('a.switch').removeClass("activeTab");
-    //         $(this).addClass("activeTab");
-    //         $("#tabOne").hide();
-    //         $("#tabTwo").hide();
-    //         $("#tabThree").hide();
-    //         $("#tabFour").show();
-    //         $("#tabFive").hide();
-    //         event.preventDefault();
-    // });
-
-    // $('.tabFive').on('click', function() {
-    //     $('a.switch').removeClass("activeTab");
-    //         $(this).addClass("activeTab");
-    //         $("#tabOne").hide();
-    //         $("#tabTwo").hide();
-    //         $("#tabThree").hide();
-    //         $("#tabFour").hide();
-    //         $("#tabFive").show();
-    //         event.preventDefault();
-    // });
-          
-    
-    $('.add-brunch-content').on('click', () => {
-        $('#brunch-paper').show();
-        $('#recipe-name-input').val('');
-        $('#instructions').val('');
-
-    })
-
-    $('.add-appetizer-content').on('click', () => {
-        $('#appetizer-paper').show();
-        $('#recipe-name-input').val('');
-        $('#instructions').val('');
-
-    })
-
-    $('.close-button').on('click', () => {
-        $('.paper').hide();
-    })
-
-    $('#submit-button').on('click', () => {
-        $('.paper').hide();
-    })
-
-    $('#brunch-list').on('click', event => {
-
-      $('.paper').show();
-      let currentIndex = event.target.id;
-      
-      //change input of recipe name and instructions to reflect current item
-      let valInput = $('#brunch-list li').eq(currentIndex).text();
-
-      $('#recipe-name-input2').attr("value", valInput);
-
-      console.log($('#recipe-name-input2'))
-
-      let getItems = JSON.parse(localStorage.getItem("allEntries")) || [];
-      let myArray = getItems;
-      let test = myArray.map(function(e) { return e._recipename;}).indexOf(valInput);
-      let instructionsSet = getItems[test]._instructions;
-      $('#instructions').val(instructionsSet);
+  $('#add-brunch-content').on('click', () => {
+      $('#brunch-paper').show();
+      $('#recipe-name-input1').val('');
+      $('#instructions1').val('');
   })
 
-    
-    // let item = $('#recipe-name-input').value; //localStorage.getItem('recipename');
+  $('#add-appetizer-content').on('click', () => {
+      $('#appetizer-paper').show();
+      $('#recipe-name-input2').val('');
+      $('#instructions2').val('');
+  })
 
-    // //select the active class?
-    // $('#submit-button').on('click', () => {
-    //     $('<li>'+item+'</li>').appendTo('#brunch-list');
-    //     $('.paper').hide();        
-    // })
+  $('#add-main-content').on('click', () => {
+    $('#main-course-paper').show();
+    $('#recipe-name-input3').val('');
+    $('#instructions3').val('');
+  })
 
+  $('#add-dessert-content').on('click', () => {
+      $('#dessert-paper').show();
+      $('#recipe-name-input4').val('');
+      $('#instructions4').val('');
+  })
+
+  $('#add-drink-content').on('click', () => {
+    $('#drink-paper').show();
+    $('#recipe-name-input5').val('');
+    $('#instructions5').val('');
+  })
+
+  $('.close-button').on('click', () => {
+      $('.paper').hide();
+  })
+
+  $('#submit-button').on('click', () => {
+      $('.paper').hide();
+  })
+
+  $('#submit-button2').on('click', () => {
+    $('.paper').hide();
+  })
+
+  $('#brunch-list').on('click', event => {
+
+    $('#brunch-paper').show();
+    let currentIndex = event.target.id;
     
+    //change input of recipe name and instructions to reflect current item
+    let valInput = $('#brunch-list li').eq(currentIndex).text();
+
+    $('#recipe-name-input1').attr("value", valInput);
+
+    console.log($('#recipe-name-input1'))
+
+    let getItems = JSON.parse(localStorage.getItem("allBrunchEntries")) || [];
+    let myArray = getItems;
+    let test = myArray.map(function(e) { return e._recipename;}).indexOf(valInput);
+    let instructionsSet = getItems[test]._instructions;
+    $('#instructions1').attr("value", instructionsSet);
+  })
+
+  $('#appetizer-list').on('click', event => {
+
+    $('#appetizer-paper').show();
+    let currentIndex = event.target.id;
+    
+    //change input of recipe name and instructions to reflect current item
+    let valInput = $('#appetizer-list li').eq(currentIndex).text();
+
+    $('#recipe-name-input2').attr("value", valInput);
+
+    console.log($('#recipe-name-input2'))
+
+    let getItems = JSON.parse(localStorage.getItem("allAppetizerEntries")) || [];
+    let myArray = getItems;
+    let test = myArray.map(function(e) { return e._recipename;}).indexOf(valInput);
+    let instructionsSet = getItems[test]._instructions;
+    $('#instructions2').attr("value", instructionsSet);
+  })
+
+  $('#main-course-list').on('click', event => {
+
+    $('#main-course-paper').show();
+    let currentIndex = event.target.id;
+    
+    //change input of recipe name and instructions to reflect current item
+    let valInput = $('#main-course-list li').eq(currentIndex).text();
+
+    $('#recipe-name-input3').attr("value", valInput);
+
+    console.log($('#recipe-name-input3'))
+
+    let getItems = JSON.parse(localStorage.getItem("allMainCourseEntries")) || [];
+    let myArray = getItems;
+    let test = myArray.map(function(e) { return e._recipename;}).indexOf(valInput);
+    let instructionsSet = getItems[test]._instructions;
+    $('#instructions3').attr("value", instructionsSet);
+  })
+
+  $('#dessert-list').on('click', event => {
+
+    $('#dessert-paper').show();
+    let currentIndex = event.target.id;
+    
+    //change input of recipe name and instructions to reflect current item
+    let valInput = $('#dessert-list li').eq(currentIndex).text();
+
+    $('#recipe-name-input4').attr("value", valInput);
+
+    console.log($('#recipe-name-input4'))
+
+    let getItems = JSON.parse(localStorage.getItem("allDessertEntries")) || [];
+    let myArray = getItems;
+    let test = myArray.map(function(e) { return e._recipename;}).indexOf(valInput);
+    let instructionsSet = getItems[test]._instructions;
+    $('#instructions4').attr("value", instructionsSet);
+  })
+
+  $('#drink-list').on('click', event => {
+
+    $('#drink-paper').show();
+    let currentIndex = event.target.id;
+    
+    //change input of recipe name and instructions to reflect current item
+    let valInput = $('#drink-list li').eq(currentIndex).text();
+
+    $('#recipe-name-input5').attr("value", valInput);
+
+    console.log($('#recipe-name-input5'))
+
+    let getItems = JSON.parse(localStorage.getItem("allDrinkEntries")) || [];
+    let myArray = getItems;
+    let test = myArray.map(function(e) { return e._recipename;}).indexOf(valInput);
+    let instructionsSet = getItems[test]._instructions;
+    $('#instructions5').attr("value", instructionsSet);
+  })
+
+  
 
 });
