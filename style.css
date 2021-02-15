@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url(appbackground.jpg);
+  background-image: url(appbackground.png);
   background-repeat: repeat;
   background-size: cover;
 }
@@ -21,7 +21,7 @@ a {
 
 .app-title {
   text-align: center;
-  color: #282727;
+  color: #ffffff;
   margin-bottom: -5px;
   font-size: 52px;
 }
@@ -189,8 +189,7 @@ input::placeholder {
 }
 
 #instructions {
-  margin-top: 7px;
-  width: auto;
+  margin-top: 20px;
 }
 
 .holes {
@@ -236,4 +235,3 @@ li {
   cursor: pointer;
   font-family: 'Indie Flower', serif;
 }
-

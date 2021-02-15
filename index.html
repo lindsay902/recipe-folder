@@ -41,7 +41,7 @@
 
             <div id="tab1" class="content active">
                 <p>Brunch Recipes
-                    <button onclick='refreshListItems("brunch-list", "allBrunchItems");'>Refresh Brunch Recipes</button>
+                    <button onclick='refreshListItems("brunch-list", "allBrunchItems");'>Refresh Brunch Recipes (after browser refresh)</button>
                     <button id="add-brunch-content">+ Add a new recipe</button> 
                         <ul id="brunch-list"></ul>
                 </p>
@@ -49,7 +49,7 @@
 
             <div id="tab2" class="content">
                 <p>Appetizer Recipes
-                    <button onclick='refreshListItems("appetizer-list", "allAppetizerItems");'>Refresh Appetizer Recipes</button>
+                    <button onclick='refreshListItems("appetizer-list", "allAppetizerItems");'>Refresh Appetizer Recipes (after browser refresh)</button>
                     <button id="add-appetizer-content">+ Add a new recipe</button>
                         <ul id="appetizer-list">
                         </ul>
@@ -58,7 +58,7 @@
 
             <div id="tab3" class="content">
                 <p>Main Course Recipes
-                    <button onclick='refreshListItems("main-course-list", "allMainCourseItems");'>Refresh Main Course Recipes</button>
+                    <button onclick='refreshListItems("main-course-list", "allMainCourseItems");'>Refresh Main Course Recipes (after browser refresh)</button>
                     <button id="add-main-content">+ Add a new recipe</button>
                         <ul id="main-course-list">
                         </ul>
@@ -67,7 +67,7 @@
 
             <div id="tab4" class="content">
                 <p>Dessert Recipes
-                    <button onclick='refreshListItems("dessert-list", "allDessertItems");'>Refresh Dessert Recipes</button>
+                    <button onclick='refreshListItems("dessert-list", "allDessertItems");'>Refresh Dessert Recipes (after browser refresh)</button>
                     <button id="add-dessert-content">+ Add a new recipe</button>
                         <ul id="dessert-list">
                         </ul>
@@ -76,7 +76,7 @@
 
             <div id="tab5" class="content">
                 <p>Drink Recipes
-                    <button onclick='refreshListItems("drink-list", "allDrinkItems");'>Refresh Drink Recipes</button>
+                    <button onclick='refreshListItems("drink-list", "allDrinkItems");'>Refresh Drink Recipes (after browser refresh)</button>
                     <button id="add-drink-content">+ Add a new recipe</button>
                         <ul id="drink-list">
                         </ul>
@@ -93,18 +93,18 @@
                         <table>
                             <tbody>
                                 <tr id="recipe-name-area1">
-                                    <td colspan="3"><label for="">Recipe Name:</label></td>
-                                    <td><input type="text" id="recipe-name-input1" autocomplete="off" name="recipename"></td>
+                                    <td><label for="">Recipe Name:</label>
+                                        <input type="text" id="recipe-name-input1" autocomplete="off" name="recipename"></td>
                                 </tr>
 
                                 <br>
                                 <br>
 
                                 <tr>
-                                    <td><input id="instructions1" colspan="4" autocomplete="off" name="instructions" type="text" placeholder="Cupcake ipsum dolor sit amet liquorice fruitcake. Candy canes jelly beans 
+                                    <td><textarea id="instructions1" cols="40" rows="20" autocomplete="off" name="instructions" type="text" placeholder="Cupcake ipsum dolor sit amet liquorice fruitcake. Candy canes jelly beans 
                                         sweet roll cupcake lollipop. Powder carrot cake toffee brownie. Marshmallow 
                                         sweet roll donut. Chocolate cake apple pie candy canes tiramisu dragée wafer. 
-                                        Croissant cookie lemon drops tiramisu jelly-o donut. Sweet gummi bears ice cream.">
+                                        Croissant cookie lemon drops tiramisu jelly-o donut. Sweet gummi bears ice cream."></textarea>
                                     </td>
                                 </tr>
                             </tbody>

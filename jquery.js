@@ -1,3 +1,4 @@
+//handles the folder tabs
 $(document).ready(() => {
 
   $(function() {
@@ -16,13 +17,14 @@ $(document).ready(() => {
       });
     });
 
-  
+  //add brunch content by clicking "Add Recipe" on the brunch tab. Show the a paper marked for brunch recipes
+  //make sure values for the recipe name and instructions are cleared of previous entries
   $('#add-brunch-content').on('click', () => {
       $('#brunch-paper').show();
       $('#recipe-name-input1').val('');
       $('#instructions1').val('');
   })
-
+// same as above but for appetizers, main course, desserts, and drinks
   $('#add-appetizer-content').on('click', () => {
       $('#appetizer-paper').show();
       $('#recipe-name-input2').val('');
@@ -47,10 +49,12 @@ $(document).ready(() => {
     $('#instructions5').val('');
   })
 
+  //press the x button an open recipe to close it
   $('.close-button').on('click', () => {
       $('.paper').hide();
   })
 
+  // when clicking "save" on a recipe, hide the paper
   $('#submit-button').on('click', () => {
       $('.paper').hide();
   })
@@ -59,6 +63,19 @@ $(document).ready(() => {
     $('.paper').hide();
   })
 
+  $('#submit-button3').on('click', () => {
+    $('.paper').hide();
+  })
+  
+  $('#submit-button4').on('click', () => {
+    $('.paper').hide();
+  })
+  
+  $('#submit-button5').on('click', () => {
+    $('.paper').hide();
+  })
+
+  
   $('#brunch-list').on('click', event => {
 
     $('#brunch-paper').show();
@@ -75,7 +92,7 @@ $(document).ready(() => {
     let myArray = getItems;
     let test = myArray.map(function(e) { return e._recipename;}).indexOf(valInput);
     let instructionsSet = getItems[test]._instructions;
-    $('#instructions1').attr("value", instructionsSet);
+    $('#instructions1').attr("value", instructionsSet.val());
   })
 
   $('#appetizer-list').on('click', event => {
